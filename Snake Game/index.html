@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(25, 20px);
+            grid-template-rows: repeat(25, 20px);
+            gap: 2px;
+            background-color: #111;
+            padding: 5px;
+            border: 3px solid white;
+        }
+        .snake {
+            width: 100%;
+            height: 100%;
+            background-color: limegreen;
+            border-radius: 4px;
+        }
+        .food-item {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .game-over {
+            position: absolute;
+            top: 40%;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Snake Game</h1>
+    <p>Score: <span id="score">0</span></p>
+    <div class="game-container"></div>
+    <div class="game-over" id="gameOverMessage">
+        <p>Game Over! <br> Final Score: <span id="finalScore">0</span></p>
+        <button onclick="restartGame()">Restart</button>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JS file -->
+</body>
+</html>
